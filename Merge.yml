@@ -1,0 +1,14 @@
+parameters:
+- name: source
+  default: ''
+- name: destination
+  default: ''
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      cd ./azurepipelinetesting;
+      git checkout ${{ parameters.source }};
+      git checkout ${{ parameters.destination }};
+      git merge ${{ parameters.source }} --no-ff --no-edit;
+      git status;
