@@ -1,0 +1,7 @@
+parameters:
+    - name: module
+      default: ''
+variables:
+    dev_branch: "dev"
+    master_branch: "master"
+    gitUrl: git@github.com:anandsanjayreddy/azurepipelinetesting.git
