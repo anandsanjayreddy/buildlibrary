@@ -1,0 +1,13 @@
+parameters:
+    - name: branch
+      default: ''
+    - name: gitUrl
+      default: ''  
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      git clone --branch ${{ parameters.branch }}  ${{ parameters.gitUrl}};
+      git config --global user.name anandsanjayreddy;
+      git config --global user.email sanjayreddy1108@gmail.com;
+      git config push.default current;
