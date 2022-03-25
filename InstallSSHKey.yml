@@ -1,0 +1,7 @@
+steps:
+- task: InstallSSHKey@0
+  displayName: 'Install an SSH key'
+  inputs:
+    knownHostsEntry: 'github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg='
+    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDdN7IqiGgCeNZ+F74JK3dSnplYHwMAnnb9o/z0XoRHlDBXAYgGYzHm4yN1QIgCUUWGpoVXOBCx8+zRwpYC8UP/qQ8TSGuQnCfOy/c5GF2fprkAH1yHiL9oMrrucfm5gY1UAHC7obrvyW0b129SunFw6/wmmAOQMkclB3n8Kws8vELqeUhwZQmpoFz5k7YgI8p1t5TM0UeWkyyAzZj3oIW1LJNG0aRlOjYclIaLzJQk2fqTQwofhVh1n/vN0e1zNgVIuEAMAmNeA5mUs/0MvSLtOIOvG+mdMWLtHzl9FGH2qQq/3y1ZnTh+06NVZvuEvoOCFMGb/raQyG5DNmPamKsTdOD3JVnqdgLJybJY0UuoGJcXsdM3fIOWv8WBmsBsaByGsbjDVau9qVjklrFZNoybox9i/CDdVjK56P5A2+xaY5HNOH5Qpuqqb6cee9jbHchNtIX7IGMbJGQf+NExxbfU54TtImGtVdYmBnLF9uiM1uVJw3JH2AeK01Jkg3KohZs='
+    sshKeySecureFile: 'myKey2'
