@@ -7,5 +7,5 @@ steps:
       mkdir finalfolder
       cp -r ./node_modules ./finalfolder
       cd finalfolder
-      zip -r web-1.0.0-snapshot-new.zip ./*
+      zip -r web-1.0.0-snapshot-new-version.zip ./*
       ls
