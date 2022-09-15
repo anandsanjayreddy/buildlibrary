@@ -5,9 +5,9 @@ steps:
     command: publish
     publishDirectory: '$(System.DefaultWorkingDirectory)/finalfolder'
     vstsFeedPublish: 'HelixTesting/helix'
-    vstsFeedPackagePublish: 'web-1.0.0-snapshot.zip'
+    vstsFeedPackagePublish: 'web-1.0.0-snapshot-new.zip'
     versionOption: custom
-    versionPublish: '1.0.1'
+    versionPublish: '1.0.0'
     packagePublishDescription: 'Test package'
 
 # - task: PublishPipelineArtifact@1
