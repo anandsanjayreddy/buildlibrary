@@ -7,7 +7,7 @@ steps:
     vstsFeedPublish: 'HelixTesting/helix'
     vstsFeedPackagePublish: 'web-1.0.0-snapshot-new-version.zip'
     versionOption: custom
-    versionPublish: 'rc-1.0.0'
+    versionPublish: '1.0.0-rc'
     packagePublishDescription: 'Test package'
 
 # - task: PublishPipelineArtifact@1
