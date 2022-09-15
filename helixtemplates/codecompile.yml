@@ -1,0 +1,11 @@
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      yarn install
+      ls
+      mkdir finalfolder
+      cp -r ./node_modules ./finalfolder
+      cd finalfolder
+      zip -r web-1.0.0-snapshot.zip ./*
+      ls

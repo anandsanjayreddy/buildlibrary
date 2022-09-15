@@ -1,0 +1,6 @@
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      latestversion=` curl --location --request GET 'https://feeds.dev.azure.com/testing1108/HelixTesting/_apis/packaging/Feeds/helix/packages?api-version=6.0-preview.1'| jq .value[].versions[].version | sort -Vr| tr -d '"' | sed -n 1p`
+      echo $latestversion

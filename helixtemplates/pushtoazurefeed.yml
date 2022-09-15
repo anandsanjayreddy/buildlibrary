@@ -1,0 +1,16 @@
+steps:
+- task: UniversalPackages@0
+  displayName: Universal Publish
+  inputs:
+    command: publish
+    publishDirectory: '$(System.DefaultWorkingDirectory)/finalfolder'
+    vstsFeedPublish: 'HelixTesting/helix'
+    vstsFeedPackagePublish: 'web-1.0.0-snapshot.zip'
+    versionOption: custom
+    versionPublish: '1.0.1'
+    packagePublishDescription: 'Test package'
+
+# - task: PublishPipelineArtifact@1
+#   inputs:
+#     targetPath: $(System.DefaultWorkingDirectory)/bin/WebApp
+#     artifactName: WebApp
