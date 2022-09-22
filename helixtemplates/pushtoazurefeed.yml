@@ -5,7 +5,7 @@ steps:
     command: publish
     publishDirectory: '$(System.DefaultWorkingDirectory)/finalfolder'
     vstsFeedPublish: 'HelixTesting/helix'
-    vstsFeedPackagePublish: 'web-0.1.0-snapshot-new-version.zip'
+    vstsFeedPackagePublish: 'web-0.0.0-snapshot-new-version.zip'
     versionOption: custom
     versionPublish: '2.0.0'
     packagePublishDescription: 'Test package'
