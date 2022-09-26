@@ -6,3 +6,6 @@ steps:
       echo $BUILD_SOURCEBRANCHNAME
       echo ----
       TEST_VAR=abcd
+      echo ............
+      echo $TEST_VAR
+      echo ............
