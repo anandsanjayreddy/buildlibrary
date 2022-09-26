@@ -6,6 +6,7 @@ steps:
       echo $BUILD_SOURCEBRANCHNAME
       echo ----
       TEST_VAR=abcd
+      echo "##vso[task.setvariable variable=TEST_VAR]$TEST_VAR"
       echo ............
       echo $TEST_VAR
       echo ............
