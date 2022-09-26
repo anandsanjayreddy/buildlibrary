@@ -3,5 +3,5 @@ steps:
   inputs:
     script: |
       echo ----
-      echo $Build.SourceBranchName
+      echo $BUILD_SOURCEBRANCHNAME
       echo ----
