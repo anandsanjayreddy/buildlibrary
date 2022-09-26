@@ -1,0 +1,7 @@
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo ----
+      echo $Build.SourceBranchName
+      echo ----
