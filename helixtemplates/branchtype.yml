@@ -8,17 +8,22 @@ steps:
       echo ----
       echo $BUILD_SOURCEBRANCHNAME
       echo ----
-      if [[ $BUILD_SOURCEBRANCHNAME == develop* ]]
+      if [[ $BUILD_SOURCEBRANCHNAME == develop ]]
       then
         packagename="webui-${{ parameters.applicationversion }}-snapshot.zip"
-      elif [[ $BUILD_SOURCEBRANCHNAME == release-candidate* ]]
+        feedtype="snapshot"
+      elif [[ $BUILD_SOURCEBRANCHNAME == release-candidate ]]
       then
         packagename="webui-${{ parameters.applicationversion }}-rc.n.zip"
+        feedtype="releasecandidate"
       elif [[ $BUILD_SOURCEBRANCHNAME == master ]]
       then
         packagename="webui-${{ parameters.applicationversion }}.zip"
+        feedtype="release"
       fi
       echo "##vso[task.setvariable variable=packagename]$packagename"
+      echo "##vso[task.setvariable variable=feedtype]$feedtype"
       echo ............
       echo $packagename
+      echo $feedtype
       echo ............

@@ -3,13 +3,15 @@ parameters:
       default: ''
     - name: updatetype
       default: ''
+    - name: feedtype
+      default: ''
 steps:
 - task: UniversalPackages@0
   displayName: Universal Publish
   inputs:
     command: publish
     publishDirectory: '$(System.DefaultWorkingDirectory)/finalfolder'
-    vstsFeedPublish: 'HelixTesting/helix'
+    vstsFeedPublish: 'HelixTesting/${{ parameters.feedtype }}'
     vstsFeedPackagePublish: ${{ parameters.packagename }}
     versionOption: ${{ parameters.updatetype }}
     packagePublishDescription: 'Test package'
