@@ -14,7 +14,7 @@ steps:
       elif [[ $BUILD_SOURCEBRANCHNAME == release-candidate* ]]
       then
         packagename="webui-${{ parameters.applicationversion }}-rc.n.zip"
-      elif [[ $BUILD_SOURCEBRANCHNAME == main ]]
+      elif [[ $BUILD_SOURCEBRANCHNAME == master ]]
       then
         packagename="webui-${{ parameters.applicationversion }}.zip"
       fi
