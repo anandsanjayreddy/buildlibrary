@@ -1,3 +1,6 @@
+parameters:
+    - name: packagename
+      default: ''
 steps:
 - task: CmdLine@2
   inputs:
@@ -7,5 +10,5 @@ steps:
       mkdir finalfolder
       cp -r ./node_modules ./finalfolder
       cd finalfolder
-      zip -r web-0.0.0-snapshot-new-version.zip ./*
+      zip -r ${{ parameters.packagename }} ./*
       ls

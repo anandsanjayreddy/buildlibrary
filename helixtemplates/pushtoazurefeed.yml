@@ -1,3 +1,8 @@
+parameters:
+    - name: packagename
+      default: ''
+    - name: updatetype
+      default: ''
 steps:
 - task: UniversalPackages@0
   displayName: Universal Publish
@@ -5,9 +10,8 @@ steps:
     command: publish
     publishDirectory: '$(System.DefaultWorkingDirectory)/finalfolder'
     vstsFeedPublish: 'HelixTesting/helix'
-    vstsFeedPackagePublish: 'web-0.0.0-snapshot-new-version.zip'
-    versionOption: custom
-    versionPublish: '2.0.0'
+    vstsFeedPackagePublish: ${{ parameters.packagename }}
+    versionOption: ${{ parameters.updatetype }}
     packagePublishDescription: 'Test package'
 
 # - task: PublishPipelineArtifact@1
