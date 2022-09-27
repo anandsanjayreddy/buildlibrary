@@ -1,3 +1,6 @@
+parameters:
+    - name: applicationversion
+      default: ''
 steps:
 - task: CmdLine@2
   inputs:
@@ -5,8 +8,17 @@ steps:
       echo ----
       echo $BUILD_SOURCEBRANCHNAME
       echo ----
-      TEST_VAR=abcd
-      echo "##vso[task.setvariable variable=TEST_VAR]$TEST_VAR"
+      if [[ $BUILD_SOURCEBRANCHNAME == develop* ]]
+      then
+        packagename="webui-${{ parameters.applicationversion }}-snapshot.zip"
+      elif [[ $BUILD_SOURCEBRANCHNAME == release-candidate* ]]
+      then
+        packagename="webui-${{ parameters.applicationversion }}-rc.n.zip"
+      elif [[ $BUILD_SOURCEBRANCHNAME == main ]]
+      then
+        packagename="webui-${{ parameters.applicationversion }}.zip"
+      fi
+      echo "##vso[task.setvariable variable=packagename]$packagename"
       echo ............
-      echo $TEST_VAR
+      echo $packagename
       echo ............
