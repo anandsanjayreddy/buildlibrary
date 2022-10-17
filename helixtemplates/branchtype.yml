@@ -1,6 +1,8 @@
 parameters:
     - name: applicationversion
       default: ''
+    - name: newVer
+      default: ''
 steps:
 - task: CmdLine@2
   inputs:
@@ -14,7 +16,7 @@ steps:
         feedtype="snapshot"
       elif [[ $BUILD_SOURCEBRANCHNAME == release-candidate ]]
       then
-        packagename="webui-${{ parameters.applicationversion }}-rc.n.zip"
+        packagename="webui-${{ parameters.applicationversion }}-rc.${{ parameters.newVer }}.zip"
         feedtype="releasecandidate"
       elif [[ $BUILD_SOURCEBRANCHNAME == master ]]
       then
