@@ -7,7 +7,8 @@ steps:
     script: |
       # rcversion=` curl --location --request GET 'https://feeds.dev.azure.com/testing1108/HelixTesting/_apis/packaging/Feeds/releasecandidate/packages?api-version=6.0-preview.1'| jq .value[].versions[].version | sort -Vr| tr -d '"' | sed -n 1p`
       rcpackagename=`curl --location --request GET 'https://feeds.dev.azure.com/testing1108/HelixTesting/_apis/packaging/Feeds/releasecandidate/packages?api-version=6.0-preview.1' | jq .value[].normalizedName | grep ${{ parameters.applicationversion }} | head -n 1`
-      rcver=`echo $rcpackagename |cut -d "." -f4-|tr -d ".zip"`
+      set -x
+      rcver=`echo $rcpackagename |tr -d '"' |cut -d "." -f4-|tr -d ".zip"`
 
       if [ -z $rcver ]; then
         newVer=0
