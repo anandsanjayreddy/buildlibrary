@@ -6,7 +6,7 @@ steps:
   inputs:
     script: |
 #     rcversion=` curl --location --request GET 'https://feeds.dev.azure.com/testing1108/HelixTesting/_apis/packaging/Feeds/releasecandidate/packages?api-version=6.0-preview.1'| jq .value[].versions[].version | sort -Vr| tr -d '"' | sed -n 1p`
-      rcpackagename=`curl --location --request GET 'https://feeds.dev.azure.com/testing1108/HelixTesting/_apis/packaging/Feeds/releasecandidate/packages?api-version=6.0-preview.1'| jq .value[].normalizedName | grep $applicationverison | head -n 1`
+#     rcpackagename=`curl --location --request GET 'https://feeds.dev.azure.com/testing1108/HelixTesting/_apis/packaging/Feeds/releasecandidate/packages?api-version=6.0-preview.1'| jq .value[].normalizedName | grep $applicationverison | head -n 1`
       rcver=`echo $rcpackagename |cut -d "." -f4-|tr -d ".zip"`
 
       if [ -z $rcver ]; then
