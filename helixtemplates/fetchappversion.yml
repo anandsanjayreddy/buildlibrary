@@ -2,7 +2,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      applicationverison=`jq .version package.json`
-      echo "##vso[task.setvariable variable=applicationverison]$applicationverison"
+      applicationversion=`jq .version package.json`
+      echo "##vso[task.setvariable variable=applicationversion]$applicationversion"
       echo ------
-      echo $applicationverison
+      echo $applicationversion
