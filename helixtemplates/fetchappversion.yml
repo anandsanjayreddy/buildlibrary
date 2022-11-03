@@ -7,3 +7,4 @@ steps:
       echo ------
       echo $applicationversion
       npm verison
+      touch testingworking
